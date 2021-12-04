@@ -6,18 +6,101 @@
     app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/authorsFragment"
+        android:id="@+id/AuthorsFragment"
         android:name="org.projeto.tinDev.ui.AuthorsFragment"
-        android:label="fragment_authors"
+        android:label="fragment_vagas"
         tools:layout="@layout/fragment_authors" />
     <fragment
-        android:id="@+id/addAuthorDialogFragment"
+        android:id="@+id/addVagaDialogFragment"
         android:name="org.projeto.tinDev.dialog.AddAuthorDialogFragment"
-        android:label="fragment_add_author_dialog"
+        android:label="fragment_add_vaga_dialog"
         tools:layout="@layout/dialog_fragment_add_author" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="org.projeto.tinDev.ui.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment"/>
+
+
+    <fragment
+        android:id="@+id/menuContratanteFragment"
+        android:name="org.projeto.tinDev.ui.MenuContratanteFragment"
+        android:label="menu_contratante_fragment"
+        tools:layout="@layout/menu_contratante_fragment" />
+
+    <fragment
+        android:id="@+id/cadastroVagaFragment"
+        android:name="org.projeto.tinDev.ui.CadastroVagaFragment"
+        android:label="cadastro_vaga_fragment"
+        tools:layout="@layout/cadastro_vaga_fragment" />
+
+    <fragment
+        android:id="@+id/menuCadastroFragment"
+        android:name="org.projeto.tinDev.ui.MenuCadastroFragment"
+        android:label="menu_cadastro_fragment"
+        tools:layout="@layout/menu_cadastro_fragment" />
+
+    <fragment
+        android:id="@+id/cadastroContratanteFragment"
+        android:name="org.projeto.tinDev.ui.CadastroContratanteFragment"
+        android:label="cadastro_contratante_fragment"
+        tools:layout="@layout/cadastro_contratante_fragment" />
+
+    <fragment
+        android:id="@+id/cadastroDevFragment"
+        android:name="org.projeto.tinDev.ui.CadastroDevFragment"
+        android:label="cadastro_dev_fragment"
+        tools:layout="@layout/cadastro_dev_fragment"/>
+
+    <fragment
+        android:id="@+id/menuDevFragment"
+        android:name="org.projeto.tinDev.ui.MenuDevFragment"
+        android:label="menu_dev_fragment"
+        tools:layout="@layout/menu_dev_fragment" />
+
+    <fragment
+        android:id="@+id/listaVagasFragment"
+        android:name="org.projeto.tinDev.ui.ListaVagasFragment"
+        android:label="ListaVagasFragment" />
+
+
+    <action
+        android:id="@+id/action_login_to_menu_contratante"
+        app:destination="@id/menuContratanteFragment" />
+
+    <action
+        android:id="@+id/action_login_to_menu_Dev"
+        app:destination="@id/menuDevFragment" />
+
+    <action
+        android:id="@+id/action_menu_contratante_to_Listagem_vagas"
+        app:destination="@id/AuthorsFragment" />
+    <action
+        android:id="@+id/action_menu_contratante_to_cadastro_vagas"
+        app:destination="@id/cadastroVagaFragment" />
+
+    <action
+        android:id="@+id/action_login_to_perfil_cadastro"
+        app:destination="@id/menuCadastroFragment" />
+
+    <action
+        android:id="@+id/action_perfil_cadastro_to_Cadastro_contratante"
+        app:destination="@id/cadastroContratanteFragment" />
+
+    <action
+        android:id="@+id/action_menu_dev_to_listagem"
+        app:destination="@id/AuthorsFragment" />
+
+    <action
+        android:id="@+id/action_Cadastro_dev_To_Login"
+        app:destination="@id/loginFragment" />
+
+    <action
+        android:id="@+id/action_Cadastro_Contratante_To_Login"
+        app:destination="@id/loginFragment" />
+
+    <action
+        android:id="@+id/action_Menu_cadastro_to_perfil_dev"
+        app:destination="@id/cadastroDevFragment"/>
+
 </navigation>

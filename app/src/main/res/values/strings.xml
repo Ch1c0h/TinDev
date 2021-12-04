@@ -3,20 +3,19 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_new_author">Add New Author</string>
-    <string name="enter_author_s_name">Enter Author\'s Name</string>
+    <string name="add_new_vaga">Add New Vaga</string>
+    <string name="enter_vaga_s_name">Enter Vaga\'s Name</string>
     <string name="add">Add</string>
     <string name="error_field_required">This Field Required</string>
-    <string name="author_added">Author Successfully Added</string>
+    <string name="vaga_added">Vaga Successfully Added</string>
     <string name="error">Error: %1$s</string>
-    <string name="muhamad_azmi">Muhamad Azmi</string>
-    <string name="edit_author_s_name">Edit Author\'s Name</string>
+    <string name="edit_vaga_s_name">Edit Vaga\'s Name</string>
     <string name="update">Update</string>
-    <string name="edit_author">Edit Author</string>
-    <string name="author_updated">Author Updated!</string>
+    <string name="edit_vaga">Edit Vaga</string>
+    <string name="vaga_updated">Vaga Updated!</string>
     <string name="delete_confirmation">Are you sure want to delete it?</string>
     <string name="yes">Yes</string>
-    <string name="list_author">List Author</string>
+    <string name="list_vaga">List Vaga</string>
     <string name="Titulo">Título do job</string>
     <string name="descricao_vaga">Descrição da vaga</string>
     <string name="add_contratante">Cadastro de Contratante</string>
@@ -24,4 +23,29 @@
     <string name="adicionar_contratante">Adicionar contratante</string>
     <string name="contratante_email">E-mail</string>
     <string name="contratante_senha">Senha</string>
+    <string name="login">Acessar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cadastro_vagas">Cadastrar vagas</string>
+    <string name="visualizar_vagas">Visualizar vagas cadastradas</string>
+    <string name="perfil_contratante">Contratante</string>
+    <string name="perfil_dev">Profissional de TI</string>
+    <string name="add_TI">Cadastro de profissional de TI</string>
+    <string name="dev_nome">Nome</string>
+    <string name="dev_email">Email</string>
+    <string name="dev_senha">Senha</string>
+    <string name="dev_descricao">Fale sobre sua experiência</string>
+    <string name="adicionar_Dev">Cadastrar</string>
+    <string name="add_vaga">Cadastro de vaga</string>
+    <string name="titulo_vaga">Título</string>
+    <string name="vaga_descricao">Fale sobre o trabalho</string>
+    <string name="adicionar_vaga">Cadastrar</string>
+    <string name="vaga_adicionada">Vaga cadastrada</string>
+    <string name="author_added">author add</string>
+    <string name="author_updated">autor atualizado</string>
+    <string name="add_new_author">adicionar autor</string>
+    <string name="enter_author_s_name">nome autor</string>
+    <string name="edit_author_s_name">nomeAutor</string>
+    <string name="edit_author">Alterar autor</string>
+    <string name="list_author">Lista de autores</string>
+    <string name="listagem_de_vagas">Listagem de vagas</string>
 </resources>

@@ -25,9 +25,9 @@ class AddAuthorDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // mendapatkan viewmodel dari class AuthorViewModels
+
         viewModel = ViewModelProviders.of(this).get(AuthorsViewModel::class.java)
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.dialog_fragment_add_author, container, false)
     }
 
@@ -40,10 +40,10 @@ class AddAuthorDialogFragment : DialogFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        // define result on button add author clicked
+
         viewModel.result.observe(viewLifecycleOwner, Observer {
             val message = if (it == null) {
-                getString(R.string.author_added)
+                getString(R.string.vaga_adicionada)
             } else {
                 getString(R.string.error, it.message)
             }
@@ -52,9 +52,10 @@ class AddAuthorDialogFragment : DialogFragment() {
             dismiss()
         })
 
-        // on click
+
         btn_add_author.setOnClickListener {
             val name = et_name.text.toString().trim()
+            val descricao = et_descricao.text.toString()
 
             if (name.isEmpty()) {
                 input_layout_name.error = getString(R.string.error_field_required)
@@ -63,6 +64,7 @@ class AddAuthorDialogFragment : DialogFragment() {
 
             val author = Author()
             author.name = name
+            author.descricao = descricao
             viewModel.addAuthor(author)
         }
     }

@@ -1,4 +1,4 @@
-package org.projeto.tinDev.ui
+package org.projeto.tinDev.viewmodel
 
 import androidx.lifecycle.ViewModel
 

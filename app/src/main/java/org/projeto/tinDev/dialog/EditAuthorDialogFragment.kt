@@ -25,7 +25,7 @@ class EditAuthorDialogFragment(private val author: Author) : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // mendapatkan viewmodel dari class AuthorViewModels
+
         viewModel = ViewModelProviders.of(this).get(AuthorsViewModel::class.java)
 
         return inflater.inflate(R.layout.dialog_fragment_edit_author, container, false)
@@ -34,7 +34,7 @@ class EditAuthorDialogFragment(private val author: Author) : DialogFragment() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // styling pop up add author
+
         setStyle(STYLE_NO_TITLE, android.R.style.Theme_Material_Light_Dialog_MinWidth)
     }
 
@@ -42,8 +42,9 @@ class EditAuthorDialogFragment(private val author: Author) : DialogFragment() {
         super.onActivityCreated(savedInstanceState)
 
         et_name.setText(author.name)
+        et_descricao.setText(author.descricao)
 
-        // define result on button add author clicked
+
         viewModel.result.observe(viewLifecycleOwner, Observer {
             val message = if (it == null) {
                 getString(R.string.author_updated)
@@ -55,16 +56,17 @@ class EditAuthorDialogFragment(private val author: Author) : DialogFragment() {
             dismiss()
         })
 
-        // on click
+
         btn_edit_author.setOnClickListener {
             val name = et_name.text.toString().trim()
-
+            val descricao = et_descricao.text.toString()
             if (name.isEmpty()) {
                 input_layout_name.error = getString(R.string.error_field_required)
                 return@setOnClickListener
             }
 
             author.name = name
+            author.descricao = descricao
             viewModel.updateAuthor(author)
         }
     }

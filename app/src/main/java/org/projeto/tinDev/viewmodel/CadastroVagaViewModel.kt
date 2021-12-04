@@ -4,19 +4,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.database.*
-import org.projeto.tinDev.data.Author
-import org.projeto.tinDev.data.NODE_VAGA
 import org.projeto.tinDev.data.Vaga
+import org.projeto.tinDev.data.NODE_VAGA
 
-class ListaVagasViewModel : ViewModel() {
+class CadastroVagaViewModel : ViewModel() {
 
     private val dbVagas = FirebaseDatabase.getInstance().getReference(NODE_VAGA)
-
 
     private val _vagas = MutableLiveData<List<Vaga>>()
     val vagas: LiveData<List<Vaga>>
         get() = _vagas
-
 
     private val _vaga = MutableLiveData<Vaga>()
     val vaga: LiveData<Vaga>
@@ -26,7 +23,6 @@ class ListaVagasViewModel : ViewModel() {
     private val _result = MutableLiveData<Exception?>()
     val result: LiveData<Exception?>
         get() = _result
-
 
     fun addVaga(vaga: Vaga) {
         vaga.id = dbVagas.push().key
@@ -39,19 +35,16 @@ class ListaVagasViewModel : ViewModel() {
         }
     }
 
-
     private val childEventListener = object : ChildEventListener {
         override fun onCancelled(error: DatabaseError) { }
 
         override fun onChildMoved(snapshot: DataSnapshot, p1: String?) { }
-
 
         override fun onChildChanged(snapshot: DataSnapshot, p1: String?) {
             val vaga = snapshot.getValue(Vaga::class.java)
             vaga?.id = snapshot.key
             _vaga.value = vaga
         }
-
 
         override fun onChildAdded(snapshot: DataSnapshot, p1: String?) {
             val vaga = snapshot.getValue(Vaga::class.java)
@@ -67,11 +60,9 @@ class ListaVagasViewModel : ViewModel() {
         }
     }
 
-
     fun getRealtimeUpdates() {
         dbVagas.addChildEventListener(childEventListener)
     }
-
 
     private val valueEventListener = object : ValueEventListener {
         override fun onCancelled(error: DatabaseError) { }
@@ -89,11 +80,9 @@ class ListaVagasViewModel : ViewModel() {
         }
     }
 
-
     fun fetchVagas() {
         dbVagas.addListenerForSingleValueEvent(valueEventListener)
     }
-
 
     fun updateVaga(vaga: Vaga) {
         dbVagas.child(vaga.id!!).setValue(vaga).addOnCompleteListener {
@@ -104,7 +93,6 @@ class ListaVagasViewModel : ViewModel() {
             }
         }
     }
-
 
     fun deleteVaga(vaga: Vaga) {
         dbVagas.child(vaga.id!!).setValue(null).addOnCompleteListener {
@@ -120,4 +108,5 @@ class ListaVagasViewModel : ViewModel() {
         super.onCleared()
         dbVagas.removeEventListener(childEventListener)
     }
+
 }

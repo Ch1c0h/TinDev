@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/add_new_author"
+        android:text="@string/add_vaga"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24sp"
@@ -28,7 +28,22 @@
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_author_s_name" />
+            android:hint="@string/titulo_vaga" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_descricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/vaga_descricao"
+            android:inputType="textMultiLine"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -37,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:text="@string/add"
+        android:text="@string/cadastrar"
         android:textColor="@android:color/white" />
 
 </LinearLayout>

@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.fragment_authors.*
 
 import org.projeto.tinDev.R
 import org.projeto.tinDev.data.Author
+import org.projeto.tinDev.data.Vaga
 import org.projeto.tinDev.dialog.AddAuthorDialogFragment
 import org.projeto.tinDev.dialog.EditAuthorDialogFragment
 import org.projeto.tinDev.recyclerview.AuthorsAdapter
@@ -21,7 +22,7 @@ import org.projeto.tinDev.viewmodel.AuthorsViewModel
 
 class AuthorsFragment : Fragment(),
     RecyclerViewClickListener {
-    // buat view model reference ke AuthorsViewModel
+
     private lateinit var viewModel: AuthorsViewModel
     private val adapter =
         AuthorsAdapter()
@@ -30,24 +31,24 @@ class AuthorsFragment : Fragment(),
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // inisialisasi viewModel
+
         viewModel = ViewModelProviders.of(this).get(AuthorsViewModel::class.java)
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_authors, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        // set listener on this fragment
+
         adapter.listener = this
-        // set adapter untuk recycleview
+
         recycler_view_authors.adapter = adapter
 
-        // panggil fun yg di view model untuk fetch data
+
         viewModel.fetchAuthors()
 
-        // panggil fun get realtimeupdate
+
         viewModel.getRealtimeUpdates()
 
         viewModel.authors.observe(viewLifecycleOwner, Observer {
@@ -59,7 +60,7 @@ class AuthorsFragment : Fragment(),
             adapter.addAuthor(it)
         })
 
-        // event ketika tombol add di klik
+
         btn_add.setOnClickListener {
             AddAuthorDialogFragment()
                 .show(childFragmentManager,"")

@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:padding="18dp"
-                android:text="@string/muhamad_azmi"
+                android:text="@string/titulo_vaga"
                 android:textColor="#000000"
                 android:textSize="18sp" />
         </RelativeLayout>

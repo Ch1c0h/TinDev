@@ -36,11 +36,11 @@ class AuthorsAdapter : RecyclerView.Adapter<AuthorsAdapter.AuthorViewModel>() {
     }
 
     fun addAuthor(author: Author) {
-        // untuk nambah data
+
         if (!authors.contains(author)){
             authors.add(author)
-        } else { // untuk update data
-            // buat index untuk data yang dihapus atau edit
+        } else {
+
             val index = authors.indexOf(author)
             if (author.isDeleted) {
                 authors.removeAt(index)

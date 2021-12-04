@@ -6,6 +6,7 @@ data class Author (
     @get:Exclude
     var id: String? = null,
     var name: String? = null,
+    var descricao: String? = null,
     @get:Exclude
     var isDeleted: Boolean = false
 
